@@ -17,8 +17,12 @@ export default function Login() {
         : await signupApi({ email, password });
 
     if (res.message?.includes("successful")) {
-      if (mode === "login") navigate("/success");
-      else {
+      if (mode === "login") {
+        // ✅ SAVE USER
+        localStorage.setItem("user", JSON.stringify(res.data));
+
+        navigate("/success");
+      } else {
         alert("Signup successful, now login");
         setMode("login");
       }
