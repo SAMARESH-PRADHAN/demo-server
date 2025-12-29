@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/api/auth";
+const API = "https://api-demo-server-eaks.onrender.com/api/auth";
 
 export const signupApi = (data) =>
   fetch(`${API}/signup`, {
